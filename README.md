@@ -143,9 +143,9 @@ if_id_reg.v regfile.v imm_gen.v control_unit.v id_ex_reg.v alu.v \
 alu_ctrl.v branch_unit.v forward_unit.v hazard_unit.v ex_mem_reg.v \
 data_mem.v mem_wb_reg.v
 vvp sim_top
+```
 
-
-7) To View waveform:
+7) **To View waveform**:
 ```bash
 gtkwave riscv_top.vcd
 ```
