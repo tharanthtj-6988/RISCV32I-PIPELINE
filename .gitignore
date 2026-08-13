@@ -1,0 +1,7 @@
+sim_alu
+sim_ctrl
+sim_top
+sim_trace
+sim_rand
+sim_assert
+*.vcd
