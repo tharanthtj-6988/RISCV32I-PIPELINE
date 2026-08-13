@@ -8,31 +8,34 @@ data forwarding, and branch resolution. With all instructions covered.
 
 1) **Project Structure**
 
-RISC/
- pc.v                 # Program counter with stall support
- instr_mem.v          # Instruction memory, word addressed
- if_id_reg.v          # IF/ID pipeline register (flush & stall)
- regfile.v            # 32x32 register file, x0 hardwired to zero
- imm_gen.v            # Immediate generator for all RV32I formats
- control_unit.v       # Main decoder
- id_ex_reg.v          # ID/EX pipeline register
- alu.v                # ALU supporting 10 operations
- alu_ctrl.v           # ALU control decoder
- branch_unit.v        # Condition evaluator for all 6 branch types
- forward_unit.v       # Forwarding unit (EX/MEM and MEM/WB paths)
- hazard_unit.v        # Load-use hazard detection and stall generation
- ex_mem_reg.v         # EX/MEM pipeline register
- data_mem.v           # Data memory
- mem_wb_reg.v         # MEM/WB pipeline register
- riscv_top.v          # Top level integration
- tb_alu.sv            # ALU unit testbench
- tb_control_unit.sv   # Control unit testbench
- tb_riscv_top.sv      # Full pipeline directed testbench
- tb_pipeline_trace.v  # Per-cycle pipeline stage trace
- tb_random.v          # Constrained random testbench with reference model
- tb_assertions.sv     # SystemVerilog assertion testbench
- riscv_assertions.v   # 9 SVA properties for protocol checking
+**Design Files**
 
+- pc.v — program counter with stall support
+- instr_mem.v — instruction memory, word addressed
+- if_id_reg.v — IF/ID pipeline register with flush and stall
+- regfile.v — 32x32 register file, x0 hardwired to zero
+- imm_gen.v — immediate generator for all RV32I formats
+- control_unit.v — main decoder, generates all control signals
+- id_ex_reg.v — ID/EX pipeline register
+- alu.v — ALU supporting 10 operations
+- alu_ctrl.v — ALU control decoder
+- branch_unit.v — branch condition evaluator for all 6 branch types
+- forward_unit.v — forwarding unit, EX/MEM and MEM/WB paths
+- hazard_unit.v — load-use hazard detection and stall generation
+- ex_mem_reg.v — EX/MEM pipeline register
+- data_mem.v — data memory
+- mem_wb_reg.v — MEM/WB pipeline register
+- riscv_top.v — top level integration of all stages
+
+**Verification Files**
+
+- tb_alu.sv — ALU unit testbench
+- tb_control_unit.sv — control unit testbench
+- tb_riscv_top.sv — full pipeline directed testbench
+- tb_pipeline_trace.v — per-cycle pipeline stage trace
+- tb_random.v — constrained random testbench with reference model
+- tb_assertions.sv — SystemVerilog assertion testbench
+- riscv_assertions.v — 9 SVA properties for protocol checking
 
 
 2)**Supported Instructions**
